@@ -2,7 +2,22 @@
 
 
 {% block body %}
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+    <nav id="firstone">
+        <ul class="menu">
+            <li class="logo">lagenceDuWeb</li>
+            <li class="item">sign_in</li>
+            <li class="item">sign_up</li>
+            <li class="item">about</li>
+            <li class="item">faq</li>
+            <li class="item">
+                <input type="text" placeholder="rechercher" id="searcher">
+            </li>
+        </ul>
+    </nav>
+
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" id="navexpand">
         <div id="niv"><a class="navbar-brand" id="color" href="#">Navbar</a></div>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

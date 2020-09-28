@@ -3,24 +3,129 @@
     <head>
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-        <style>
-            @media all and (max-width: 768px){
-                #niv{
-                    color:red;
-                    margin: 0 auto;
-                }
-                #color{
-                    font-family: "Adobe Arabic";
-                    color: red;
-                    text-decoration: line-through;
-                    font-size: 33px;
-                    letter-spacing: 1px;
 
+        <style>
+
+
+                /*basic style */
+            * {
+                box-sizing: border-box;
+                padding: 0;
+                margin: 0;
+            }
+
+            body {
+                font-family: sans-serif;
+            }
+
+            header {
+                background: orangered;
+                top: 0;
+                left: 0;
+                width: 100%;
+                position: fixed;
+                z-index: 9;
+            }
+
+            .menu {
+                display: flex;
+                list-style-type: none;
+                justify-content: center;
+            }
+
+            .item {
+                padding: 30px 26px;
+            }
+            .item.active {
+                display: block;
+            }
+
+
+            .logo {
+                flex: 1;
+                padding: 8px 8px;
+            }
+
+            .logo a {
+                font-size: 31px;
+            }
+
+
+            .menu li a {
+                text-decoration: none;
+                font-family: sans-serif;
+                display: block;
+                color: white;
+            }
+
+            .toggle {
+                display: none;
+            }
+
+            /*.active {
+                display: block;
+            }*/
+
+            /* Mobile menu*/
+            @media all and (max-width: 768px) {
+                .menu {
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: space-between;
+                    align-items: center;
+                }
+
+                .bars {
+                    background: #ffffff;
+                    display: inline-block;
+                    height: 2px;
+                    position: relative;
+                    transition: background .2s ease-out;
+                    width: 18px;
+                }
+
+                .bars:before,
+                .bars:after {
+                    background: #ffffff;
+                    content: '';
+                    display: block;
+                    height: 100%;
+                    position: absolute;
+                    transition: all .2s ease-out;
+                    width: 100%;
+                }
+
+                .bars:before {
+                    top: 5px;
+                }
+
+                .bars:after {
+                    top: -5px;
+                }
+
+                .toggle {
+                    order: 1;
+                    cursor: pointer;
+                    display:block ;
+                    padding-right: 5px;
+                }
+
+                .item {
+                    width: 100%;
+                    text-align: center;
+                    order: 3;
+                    display: none;
+                    border-bottom: 1px solid #ffffff;
+                }
+                .logo {
+                    text-align: center;
                 }
             }
         </style>
         {% block stylesheets %}
+            <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
 
         {% endblock %}
     </head>
