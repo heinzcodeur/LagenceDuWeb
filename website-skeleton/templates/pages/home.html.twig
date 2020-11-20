@@ -17,7 +17,7 @@
     </nav>
 
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light" id="navexpand">
+    <!--nav class="navbar navbar-expand-lg navbar-light bg-light" id="navexpand">
         <div id="niv"><a class="navbar-brand" id="color" href="#">Navbar</a></div>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -32,17 +32,17 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#">Link</a>
                 </li>
-                <!--li class="nav-item dropdown">
+                <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Dropdown
                     </a>
-                    <!--div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="#">Action</a>
                         <a class="dropdown-item" href="#">Another action</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="#">Something else here</a>
-                    </div-->
+                    </div>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
@@ -53,10 +53,30 @@
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
             </form>
         </div>
-    </nav>
-    <div class="jumbotron text-center">
+    </nav-->
 
-        <h1>le son exact 15/49</h1>
-    </div>
+        <div class="jumbotron text-center">
+
+            <h1>mawebagence</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, dignissimos distinctio molestias nemo ratione tempore vel. Ad eligendi fugiat ipsa laborum, quibusdam ratione rem saepe voluptates! Dignissimos earum qui sapiente.</p>
+        </div>
+
+    <div class="container">
+        <h2>les derniers logements</h2>
+        <div class="row flex">
+            {% for prop in properties %}
+                <div class="col-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <a href="#">{{ prop.title }}</a>
+                            </h5>
+                            <p class="card-text">{{ prop.city }} {{ prop.zipCode }}</p>
+                            <div class="text-primary" style="font-weight: bold;font-size:2rem;">{{ prop.formattedPrice }}</div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
     </div>
 {% endblock %}

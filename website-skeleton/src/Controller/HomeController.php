@@ -3,10 +3,11 @@
 namespace App\Controller;
 
 
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Twig\Environment;
 
-class HomeController{
+class HomeController extends AbstractController {
 
 
     /**
@@ -21,7 +22,8 @@ class HomeController{
 
     public function index(){
 
-        return new Response($this->twig->render('pages/home.html.twig'));
+        //return new Response($this->twig->render('pages/home.html.twig'));
+        return $this->redirectToRoute("property.index");
 
     }
 
